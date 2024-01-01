@@ -73,6 +73,9 @@
     },
     "updater": {
       "active": true,
+      "endpoints": [
+        "https://gist.github.com/MasterKrab/044ff6705b8fd8e8f66008ba945850d9"
+      ],
       "dialog": true,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEFCNjc3QzhDREM0MUUyMTUKUldRVjRrSGNqSHhucXlYSC9abmhQL0pVemZzVDZESU1pNkV3bGZKYURIR0xNeG1jRzZ1bFd6eE4K",
       "windows": {
