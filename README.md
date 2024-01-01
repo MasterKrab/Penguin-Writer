@@ -2,7 +2,7 @@
 
 Aplication for write notes in markdown. The aplication is made in Tauri to use web technologies for a desktop app, Typescript for type safety, Svelte as frontend and Rust as backend.
 
-(screenshot)[./screenshot.png]
+![screenshot](./screenshot.png)
 
 ## Prerequisites
 
