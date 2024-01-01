@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "@fontsource/fira-code": "5.0.16",
-    "@fontsource/poppins": "5.0.8",
     "@fontsource/roboto": "5.0.8",
     "@tauri-apps/api": "1.5.3",
     "monaco-editor": "0.45.0"

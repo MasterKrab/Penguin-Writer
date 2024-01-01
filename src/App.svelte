@@ -18,7 +18,7 @@
 
   import welcomeText from "./assets/welcome";
 
-  import "@fontsource/poppins";
+  import "@fontsource/roboto";
   import "./styles/global.css";
   import { onDestroy, onMount } from "svelte";
 
