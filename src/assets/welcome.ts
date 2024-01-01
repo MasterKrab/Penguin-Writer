@@ -6,7 +6,7 @@ Thanks for downloading my application.
 Start your creative experience by creating a document from scratch.
 Easily save your ideas, stories, or notes.
 
-<img  src="/public/assets/logo.png" alt="Logo" width="150" height="150">
+<img  src="/assets/logo.png" alt="Logo" width="150" height="150">
 
 ## Get Started
 * Create a new document and save it
