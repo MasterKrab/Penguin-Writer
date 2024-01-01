@@ -3,7 +3,7 @@
     "beforeBuildCommand": "pnpm run vite-build",
     "beforeDevCommand": "pnpm run vite-dev",
     "devPath": "http://localhost:8080",
-    "distDir": "../public"
+    "distDir": "../dist"
   },
   "package": {
     "productName": "PenguinWriter",

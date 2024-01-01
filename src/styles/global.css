@@ -1,5 +1,5 @@
 :root {
-  --primary-font: "Poppins", sans-serif;
+  --primary-font: "Roboto", sans-serif;
   --code-font: "Fira Code", sans-serif;
 
   --primary-color: #282a36;
@@ -36,4 +36,8 @@ button {
   border: none;
   color: inherit;
   cursor: pointer;
+}
+
+.icon{
+  color: var(--tertiary-color);
 }

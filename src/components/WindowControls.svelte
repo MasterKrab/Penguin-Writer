@@ -2,10 +2,7 @@
   import { onDestroy, onMount } from "svelte";
   import { appWindow } from "@tauri-apps/api/window";
 
-  import LineIcon from "./icons/Line.svelte";
-  import RestoreWindowIcon from "./icons/RestoreWindow.svelte";
-  import MaximizeIcon from "./icons/Maximize.svelte";
-  import CloseIcon from "./icons/Close.svelte";
+  import Icon from "@iconify/svelte";
 
   let isMaximixed: boolean;
   let interval: number;
@@ -29,17 +26,17 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <section class="top" on:click={updateIsMaximized}>
   <button class="button" on:click={appWindow.minimize}>
-    <LineIcon fill="var(--tertiary-color)" />
+    <Icon class="icon" icon="mdi:window-minimize" />
   </button>
   <button class="button" on:click={appWindow.toggleMaximize}>
     {#if isMaximixed}
-      <RestoreWindowIcon fill="var(--tertiary-color)" />
+      <Icon class="icon" icon="mdi:window-restore" />
     {:else}
-      <MaximizeIcon fill="var(--tertiary-color)" />
+      <Icon class="icon" icon="mdi:window-maximize" />
     {/if}
   </button>
   <button class="button" on:click={appWindow.close}>
-    <CloseIcon fill="var(--tertiary-color)" />
+    <Icon class="icon" icon="mdi:window-close" />
   </button>
 </section>
 
@@ -50,10 +47,31 @@
     gap: 0.75rem;
   }
 
+  :global(.icon) {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+
+    @media (hover: hover) {
+      transition: color 0.2s;
+    }
+  }
+
   .button {
     display: grid;
     place-items: center;
-    width: 1rem;
-    height: 1rem;
+    border-radius: 0.25rem;
+
+    @media (hover: hover) {
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: var(--tertiary-color);
+
+        & :global(.icon) {
+          color: var(--primary-color);
+        }
+      }
+    }
   }
 </style>
