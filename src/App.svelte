@@ -4,6 +4,7 @@
   import { open, save } from "@tauri-apps/api/dialog";
   import { readTextFile, writeTextFile } from "@tauri-apps/api/fs";
 
+  import FloatingFocus from "./components/FloatingFocus.svelte";
   import TopBar from "./components/TopBar.svelte";
   import TabBar from "./components/TabBar.svelte";
   import WindowControls from "./components/WindowControls.svelte";
@@ -112,6 +113,8 @@
     clearInterval(interval);
   });
 </script>
+
+<FloatingFocus />
 
 <header class="header">
   <TopBar
