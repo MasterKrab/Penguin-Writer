@@ -1,9 +1,8 @@
-name: Release
+name: "publish"
 on:
   push:
-    tags:
-      - "app-v*"
-  workflow_dispatch:
+    branches:
+      - release
 
 jobs:
   release:
