@@ -52,7 +52,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-          TAURI_KEY_PASSWORD: ""
         with:
           tagName: ${{ github.ref_name }}
           releaseName: "Penguin Writer v__VERSION__"
