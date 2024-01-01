@@ -37,3 +37,7 @@ button {
   color: inherit;
   cursor: pointer;
 }
+
+.icon{
+  color: var(--tertiary-color);
+}

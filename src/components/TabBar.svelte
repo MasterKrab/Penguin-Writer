@@ -3,9 +3,7 @@
 
   import { createEventDispatcher } from "svelte";
 
-  import MardownIcon from "./icons/Mardown.svelte";
-  import PlusIcon from "./icons/Plus.svelte";
-  import CloseIcon from "./icons/Close.svelte";
+  import Icon from "@iconify/svelte";
 
   export let tabs: Tab[] = [];
   export let selectedTabIndex: number = 0;
@@ -43,26 +41,21 @@
           class="button"
           on:click|stopPropagation={() => selectTab(index)}
         >
-          <MardownIcon
-            on:click={() => selectTab(index)}
-            fill="var(--tertiary-color)"
-            width={20}
-          />
+          <Icon class="icon" icon="pajamas:markdown-mark" />
           {name}
         </button>
         <button
           class="button-close"
-          class:button-close--active={isSelected}
           on:click={() => closeTab(index)}
           aria-label="Close tab {name}"
         >
-          <CloseIcon fill="var(--tertiary-color)" />
+          <Icon class="icon" icon="mdi:window-close" />
         </button>
       </li>
     {/each}
   </ul>
   <button class="button-add" on:click={handleNewFile} aria-label="New File">
-    <PlusIcon width={13} height={13} fill="var(--tertiary-color)" />
+    <Icon class="icon" icon="mdi:plus" />
   </button>
 </div>
 
@@ -116,33 +109,46 @@
     align-items: center;
     gap: 0.35rem;
     padding-left: 0.75rem;
+
+    & :global(.icon) {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 
   .button-close {
     display: grid;
     place-items: center;
     align-self: center;
-    width: 1rem;
-    height: 1rem;
-    padding: 0.25rem;
     transition: transform 0.5s;
     border-radius: 0.25rem;
-    transition: background-color 0.15s;
 
-    &:hover {
-      background-color: var(--primary-color);
+    @media (hover: hover) {
+      transition: background-color 0.15s;
+
+      &:hover {
+        background-color: var(--secondary-color);
+      }
     }
 
-    &--active:hover {
-      background-color: var(--secondary-color);
+    & :global(.icon) {
+      width: 1rem;
+      height: 1rem;
     }
-  }
 
-  .button-add {
-    transition: background-color 0.15s;
+    .button-add {
+      @media (hover: hover) {
+        transition: background-color 0.15s;
 
-    &:hover {
-      background-color: var(--secondary-color);
+        &:hover {
+          background-color: var(--secondary-color);
+        }
+      }
+
+      & :global(.icon) {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     }
   }
 </style>

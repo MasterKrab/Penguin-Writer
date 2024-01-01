@@ -1,9 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
 
-  import FileIcon from "./icons/File.svelte";
-  import PlusIcon from "./icons/Plus.svelte";
-  import SaveIcon from "./icons/Save.svelte";
+  import Icon from "@iconify/svelte";
 
   interface Events {
     newFile: {};
@@ -16,31 +14,46 @@
 
 <section class="bar" data-tauri-drag-region>
   <button class="button" on:click={() => dispatch("selectFile", {})}>
-    <FileIcon fill="var(--tertiary-color)" />
+    <Icon class="icon" icon="mdi:file" />
   </button>
   <button class="button" on:click={() => dispatch("newFile", {})}>
-    <PlusIcon fill="var(--tertiary-color)" stroke="var(--tertiary-color)" />
+    <Icon class="icon" icon="mdi:file-plus" />
   </button>
   <button class="button" on:click={() => dispatch("saveFile", {})}>
-    <SaveIcon />
+    <Icon class="icon" icon="mdi:content-save" />
   </button>
 </section>
 
 <style lang="scss">
   .bar {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  :global(.icon) {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+
+    @media (hover: hover) {
+      transition: color 0.2s;
+    }
   }
 
   .button {
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.25rem;
 
     @media (hover: hover) {
-      transition: transform 0.2s;
+      transition: background-color 0.2s;
 
       &:hover {
-        transform: scale(0.9);
+        background-color: var(--tertiary-color);
+
+        & :global(.icon) {
+          color: var(--primary-color);
+        }
       }
     }
   }
