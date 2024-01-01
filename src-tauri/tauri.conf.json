@@ -1,0 +1,88 @@
+{
+  "build": {
+    "beforeBuildCommand": "pnpm run vite-build",
+    "beforeDevCommand": "pnpm run vite-dev",
+    "devPath": "http://localhost:8080",
+    "distDir": "../public"
+  },
+  "package": {
+    "productName": "PenguinWriter",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "fs": {
+        "readFile": true,
+        "writeFile": true,
+        "scope": ["**/*", "$RESOURCE/*"]
+
+      },
+      "window": {
+        "all": false,
+        "close": true,
+        "hide": true,
+        "show": true,
+        "maximize": true,
+        "minimize": true,
+        "unmaximize": true,
+        "unminimize": true,
+        "startDragging": true
+      },
+      "dialog": {
+        "open": true,
+        "save": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "penguin-writer",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [
+        "themes/Dracula.tmTheme"
+      ],
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "PenguinW",
+        "minHeight": 500,
+        "minWidth": 600,
+        "decorations": false
+      }
+    ]
+  }
+}

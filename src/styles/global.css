@@ -1,0 +1,39 @@
+:root {
+  --primary-font: "Poppins", sans-serif;
+  --code-font: "Fira Code", sans-serif;
+
+  --primary-color: #282a36;
+  --secondary-color: #44475a;
+  --tertiary-color: #f8f8f2;
+  --cuaternary-color: #242531;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--primary-font);
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
