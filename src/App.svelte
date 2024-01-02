@@ -23,7 +23,9 @@
   import "./styles/global.css";
   import { onDestroy, onMount } from "svelte";
 
-  let tabs: Tab[] = getTabs() || [createDefaultTab(welcomeText, "welcome")];
+  const savedTabs = getTabs();
+
+  let tabs: Tab[] = savedTabs.length ? savedTabs : [createDefaultTab(welcomeText, "welcome")];
   let selectedTab: Tab = tabs[0];
   let selectedTabIndex = 0;
 
