@@ -1,3 +1,5 @@
+#![windows_subsystem = "windows"]
+
 use comrak::plugins::syntect::SyntectAdapterBuilder;
 use comrak::{markdown_to_html_with_plugins, Options, Plugins};
 use syntect::highlighting::ThemeSet;
