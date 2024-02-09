@@ -3,7 +3,8 @@
 
   import { createEventDispatcher } from "svelte";
 
-  import Icon from "@iconify/svelte";
+  import IconWindowClose from "~icons/mdi/window-close";
+  import IconMarkdownMark from "~icons/pajamas/markdown-mark";
 
   export let tabs: Tab[] = [];
   export let selectedTabIndex: number = 0;
@@ -41,7 +42,7 @@
           class="button"
           on:click|stopPropagation={() => selectTab(index)}
         >
-          <Icon class="icon" icon="pajamas:markdown-mark" />
+          <IconMarkdownMark class="icon" />
           {name}
         </button>
         <button
@@ -49,13 +50,13 @@
           on:click={() => closeTab(index)}
           aria-label="Close tab {name}"
         >
-          <Icon class="icon" icon="mdi:window-close" />
+          <IconWindowClose class="icon" />
         </button>
       </li>
     {/each}
   </ul>
   <button class="button-add" on:click={handleNewFile} aria-label="New File">
-    <Icon class="icon" icon="mdi:plus" />
+    <IconWindowClose class="icon" />
   </button>
 </div>
 

@@ -1,24 +1,17 @@
 <script lang="ts">
-  import { invoke } from "@tauri-apps/api";
+  import SvelteMarkdown from "svelte-markdown";
+  import MarkdownCode from "./MarkdownCode.svelte";
 
   export let value: string;
 </script>
 
-{#await invoke("markdown_to_html", { value }) then html}
-  <div class="markdown">
-    {@html html}
-  </div>
-{/await}
+<div class="markdown">
+  <SvelteMarkdown source={value} renderers={{ code: MarkdownCode }} />
+</div>
 
 <style lang="scss" global>
   .markdown {
-    padding: 0.5rem 1rem;
-    color: #fff;
-
-    * {
-      margin-top: 0.25em;
-      margin-bottom: 0.25em;
-    }
+    padding: 0.5em 1em;
 
     h1 {
       border-bottom: 1px solid #ccc;
@@ -34,11 +27,6 @@
       border-left: 3px solid #ccc;
       padding-left: 1rem;
       margin-left: 0;
-    }
-
-    pre {
-      background-color: var(--cuaternary-color);
-      padding: 1rem;
     }
   }
 </style>
