@@ -57,9 +57,6 @@
         "providerShortName": null,
         "signingIdentity": null
       },
-      "resources": [
-        "themes/Dracula.tmTheme"
-      ],
       "shortDescription": "",
       "targets": "all",
       "windows": {
