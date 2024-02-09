@@ -2,7 +2,10 @@
   import { onDestroy, onMount } from "svelte";
   import { appWindow } from "@tauri-apps/api/window";
 
-  import Icon from "@iconify/svelte";
+  import IconWindowMinimize from "~icons/mdi/window-minimize";
+  import IconWindowMaximize from "~icons/mdi/window-maximize";
+  import IconWindowRestore from "~icons/mdi/window-restore";
+  import IconWindowClose from "~icons/mdi/window-close";
 
   let isMaximixed: boolean;
   let interval: number;
@@ -26,17 +29,17 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <section class="top" on:click={updateIsMaximized}>
   <button class="button" on:click={appWindow.minimize}>
-    <Icon class="icon" icon="mdi:window-minimize" />
+    <IconWindowMinimize class="icon" />
   </button>
   <button class="button" on:click={appWindow.toggleMaximize}>
     {#if isMaximixed}
-      <Icon class="icon" icon="mdi:window-restore" />
+      <IconWindowRestore class="icon" />
     {:else}
-      <Icon class="icon" icon="mdi:window-maximize" />
+      <IconWindowMaximize class="icon" />
     {/if}
   </button>
   <button class="button" on:click={appWindow.close}>
-    <Icon class="icon" icon="mdi:window-close" />
+    <IconWindowClose class="icon" />
   </button>
 </section>
 

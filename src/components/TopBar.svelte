@@ -1,7 +1,9 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
 
-  import Icon from "@iconify/svelte";
+  import IconFile from "~icons/mdi/file";
+  import IconFilePlus from "~icons/mdi/file-plus";
+  import IconContentSave from "~icons/mdi/content-save";
 
   interface Events {
     newFile: {};
@@ -14,13 +16,13 @@
 
 <section class="bar" data-tauri-drag-region>
   <button class="button" on:click={() => dispatch("selectFile", {})}>
-    <Icon class="icon" icon="mdi:file" />
+    <IconFile class="icon" />
   </button>
   <button class="button" on:click={() => dispatch("newFile", {})}>
-    <Icon class="icon" icon="mdi:file-plus" />
+    <IconFilePlus class="icon" />
   </button>
   <button class="button" on:click={() => dispatch("saveFile", {})}>
-    <Icon class="icon" icon="mdi:content-save" />
+    <IconContentSave class="icon" />
   </button>
 </section>
 
