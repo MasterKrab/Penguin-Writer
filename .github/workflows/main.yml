@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - release
+      - updater-2
 
 jobs:
   release:
